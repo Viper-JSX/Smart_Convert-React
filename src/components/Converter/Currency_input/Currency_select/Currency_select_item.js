@@ -5,7 +5,7 @@ function CurrencySelectItem({ currencyName, which, handleCurrencyChange }){
     console.log(currentPairQuantity)
 
     return(
-        <div onClick={() => handleCurrencyChange({currencyName, which, quantity: which === 1 ? currentPairQuantity[1] : currentPairQuantity[0] })}>{currencyName}</div>
+        <li onClick={() => handleCurrencyChange({currencyName, which, quantity: which === 1 ? currentPairQuantity[1] : currentPairQuantity[0] })}>{currencyName}</li>
     );
 }
 
