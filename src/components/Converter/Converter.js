@@ -4,8 +4,8 @@ function Converter(){
     return(
         <div id="converter">
             <h2>ConverterRR</h2>
-            <CurrencyInput />
-            <CurrencyInput />
+            <CurrencyInput which="1" />
+            <CurrencyInput which="2" />
         </div>
     );
 }
