@@ -1,9 +1,9 @@
 import CurrencySelect from "./Currency_select/Currency_select";
 
-function CurrencyInput({ which }){
+function CurrencyInput({ which, handleCurrencyChange, handleCurrencyQuantityChange }){
     return(
         <div>
-            <CurrencySelect which={which} />
+            <CurrencySelect which={which} handleCurrencyChange={handleCurrencyChange} />
             <input type="text" placeholder="Quantity" />
         </div>
     )

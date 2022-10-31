@@ -7,6 +7,8 @@ import { changeCurrencyPair } from "./redux/thunks";
 
 import { defaultCurrencyRates } from "./various_things/default_currency_rates";
 
+//The prop which is used to distinguish between two CurrencyInput`s
+
 function App(){
     const dispatch = useDispatch();
 
@@ -22,9 +24,20 @@ function App(){
         dispatch(changeCurrencyPair({ currencyName: "uah", quantity: 1, which: 1 })) //'which' defines which input was updated
     }
 
+    function handleCurrencyChange(currencyName, quantity, which){
+        console.log(currencyName, quantity, which);
+    }
+
+    function handleCurrencyQuantityChange(quantity, which){
+        console.log(quantity, which);
+    }
+
     return(
         <div className="App">
-            <Layout />
+            <Layout 
+                handleCurrencyChange={handleCurrencyChange}
+                handleCurrencyQuantityChange={handleCurrencyQuantityChange}
+            />
         </div>
     );
 }
