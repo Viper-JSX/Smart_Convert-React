@@ -48,9 +48,17 @@ header{
 
 
 /*---Converter---*/
+#converterContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #converter{
     width: 80vw;
     min-width: 300px;
+    color: var(--lightColor);
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
