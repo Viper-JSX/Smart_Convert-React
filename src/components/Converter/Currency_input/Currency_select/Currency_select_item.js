@@ -1,6 +1,6 @@
-function CurrencySelectItem({ currencyName }){
+function CurrencySelectItem({ currencyName, which, handleCurrencyChange }){
     return(
-        <div>{currencyName}</div>
+        <div onClick={() => handleCurrencyChange({currencyName, which, quantity: 1 })}>{currencyName}</div>
     );
 }
 

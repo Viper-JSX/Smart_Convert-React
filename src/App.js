@@ -12,25 +12,19 @@ import { defaultCurrencyRates } from "./various_things/default_currency_rates";
 function App(){
     const dispatch = useDispatch();
 
+
     useEffect(() => {
         dispatch(updateCurrenciesRate(defaultCurrencyRates));
     }, [])
 
-    //document.querySelector("body").onmouseover = function(){
-    //    dispatch(convert({ quantity: 1, which: 1 })) //'which' defines which input was updated
-    //}
-
-    //document.querySelector("body").onclick = function(){
-    //    dispatch(changeCurrencyPair({ currencyName: "uah", quantity: 1, which: 1 })) //'which' defines which input was updated
-    //}
-
-    function handleCurrencyChange(currencyName, quantity, which){
+    function handleCurrencyChange({currencyName, quantity, which}){
         console.log(currencyName, quantity, which);
+        dispatch(changeCurrencyPair({ currencyName, quantity, which }))
     }
 
     function handleCurrencyQuantityChange({event, which}){
-        //console.log(event, which);
-        dispatch(convert({ quantity: parseFloat(event.target.value) || 0, which })) //'which' defines which input was updated, 0 in case if there is empty string
+        const quantity = parseFloat(event.target.value) || 0;
+        dispatch(convert({ quantity, which })) //'which' defines which input was updated, 0 in case if there is empty string
     }
 
     return(
