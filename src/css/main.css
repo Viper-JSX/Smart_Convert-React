@@ -12,7 +12,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: red;
+    background-color: var(--middleDarkBackground);
 }
 
 header{
@@ -45,6 +45,22 @@ header{
     color: var(--darkBackground);
     background-color: var(--lightBackground);
 }
+
+
+/*---Converter---*/
+#converter{
+    width: 80vw;
+    min-width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#converterTitle{
+    width: 100%;
+    text-align: center;
+}
+
 
 li.selected{
     color: red
