@@ -6,7 +6,7 @@ function CurrencySelectItem({ currencyName, which, handleCurrencyChange }){
     let isSelected = ( (which === 1 && currencyName === currentPair[0]) || (which === 2 && currencyName === currentPair[1]) );
 
     return(
-        <li className={`${isSelected ? "selected" : ""}`} onClick={() => handleCurrencyChange({currencyName, which, quantity: which === 1 ? currentPairQuantity[1] : currentPairQuantity[0] })}>{currencyName}</li>
+        <li className={`currencySelectItem ${isSelected ? "selected" : ""}`} onClick={() => handleCurrencyChange({currencyName, which, quantity: which === 1 ? currentPairQuantity[1] : currentPairQuantity[0] })}>{currencyName}</li>
     );
 }
 

@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 function Header(){
     return(
         <header>
-            <nav>
-                <ul>
+            <nav id="mainNavigation">
+                <ul id="mainNavigationNavItems">
                     <NavLink to="/" >Smart Convert</NavLink>
                     <NavLink to="donation" >Donation</NavLink>
                     <NavLink to="about" >About</NavLink>
