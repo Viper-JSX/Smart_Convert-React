@@ -28,8 +28,8 @@ function App(){
         console.log(currencyName, quantity, which);
     }
 
-    function handleCurrencyQuantityChange(quantity, which){
-        console.log(quantity, which);
+    function handleCurrencyQuantityChange({event, which}){
+        console.log(event, which);
     }
 
     return(

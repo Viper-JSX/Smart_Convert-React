@@ -4,7 +4,7 @@ function CurrencyInput({ which, handleCurrencyChange, handleCurrencyQuantityChan
     return(
         <div>
             <CurrencySelect which={which} handleCurrencyChange={handleCurrencyChange} />
-            <input type="text" placeholder="Quantity" />
+            <input type="text" placeholder="Quantity" onChange={(event) => handleCurrencyQuantityChange({ event, which })} />
         </div>
     )
 }
