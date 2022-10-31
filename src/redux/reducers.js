@@ -14,7 +14,7 @@ function currency(state={currentPair: ["eur", "usd"], currentPairQuantity: [0, 0
         case CONVERT:{
             const pair1 = state.currentPair[0];
             const pair2 = state.currentPair[1];
-
+            console.log("converting")
             if(action.payload.which === 1){ //'which defines in which input the value was changed', first input was changed 
                 const converted = (state.currencyRatesRelativeToDollar[pair1].relativeToDollar / state.currencyRatesRelativeToDollar[pair2].relativeToDollar) * action.payload.quantity;
                 console.log("converted:", pair1, state.currentPairQuantity[0], "->", pair2, state.currentPairQuantity[1], state.currentPair, state.currentPairQuantity )
@@ -27,7 +27,6 @@ function currency(state={currentPair: ["eur", "usd"], currentPairQuantity: [0, 0
             }
         }
         case UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR:{
-            console.log(UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR, state);
 
             return {...state, currencyRatesRelativeToDollar: action.payload};
         }

@@ -16,20 +16,21 @@ function App(){
         dispatch(updateCurrenciesRate(defaultCurrencyRates));
     }, [])
 
-    document.querySelector("body").onmouseover = function(){
-        dispatch(convert({ quantity: 1, which: 1 })) //'which' defines which input was updated
-    }
+    //document.querySelector("body").onmouseover = function(){
+    //    dispatch(convert({ quantity: 1, which: 1 })) //'which' defines which input was updated
+    //}
 
-    document.querySelector("body").onclick = function(){
-        dispatch(changeCurrencyPair({ currencyName: "uah", quantity: 1, which: 1 })) //'which' defines which input was updated
-    }
+    //document.querySelector("body").onclick = function(){
+    //    dispatch(changeCurrencyPair({ currencyName: "uah", quantity: 1, which: 1 })) //'which' defines which input was updated
+    //}
 
     function handleCurrencyChange(currencyName, quantity, which){
         console.log(currencyName, quantity, which);
     }
 
     function handleCurrencyQuantityChange({event, which}){
-        console.log(event, which);
+        //console.log(event, which);
+        dispatch(convert({ quantity: parseFloat(event.target.value), which })) //'which' defines which input was updated
     }
 
     return(
