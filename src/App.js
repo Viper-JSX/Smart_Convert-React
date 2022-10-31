@@ -13,6 +13,7 @@ function App(){
         dispatch(updateCurrenciesRate(defaultCurrencyRates));
     }, [])
 
+
     return(
         <div className="App">
             <Layout />
