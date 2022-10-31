@@ -30,7 +30,7 @@ function App(){
 
     function handleCurrencyQuantityChange({event, which}){
         //console.log(event, which);
-        dispatch(convert({ quantity: parseFloat(event.target.value), which })) //'which' defines which input was updated
+        dispatch(convert({ quantity: parseFloat(event.target.value) || 0, which })) //'which' defines which input was updated, 0 in case if there is empty string
     }
 
     return(
