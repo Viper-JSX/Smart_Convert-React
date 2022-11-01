@@ -87,8 +87,16 @@ header{
     display: inline-block;
 }
 
-li.selected{
+.currencySelect li.selected{
     color: red;
     background-color: var(--lightBackground);
 }
 
+
+/*---Donation_page---*/
+#donationPage{
+    margin-top: 5rem;
+    color: var(--lightColor);
+    text-align: center;
+    font-size: 3rem;
+}
