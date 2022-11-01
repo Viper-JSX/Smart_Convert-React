@@ -50,6 +50,7 @@ header{
 /*---Converter---*/
 #converterContainer{
     width: 100%;
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +59,10 @@ header{
 #converter{
     width: 40vw;
     min-width: 300px;
+    padding: 3rem;
     color: var(--lightColor);
+    border: 2px solid black;
+    border-radius: 0.5rem;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
