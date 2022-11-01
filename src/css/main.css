@@ -102,3 +102,15 @@ header{
     text-align: center;
     font-size: 3rem;
 }
+
+/*---About page---*/
+#aboutPage{
+    margin-top: 5rem;
+    color: var(--lightColor);
+    text-align: center;
+}
+
+#aboutPage > b{
+    margin: 0.5rem;
+    display: inline-block;
+}
