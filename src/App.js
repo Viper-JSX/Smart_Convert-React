@@ -2,7 +2,10 @@ import './css/main.css';
 
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
+
 import { useDispatch } from "react-redux";
+import { useRef } from 'react';
+
 import Layout from "./components/Layout";
 import { convert, updateCurrenciesRate } from "./redux/action_creators";
 import { changeCurrencyPair } from "./redux/thunks";
@@ -13,11 +16,19 @@ import { defaultCurrencyRates } from "./various_things/default_currency_rates";
 
 function App(){
     const dispatch = useDispatch();
-
+    const loadingWindowRef = useRef();
 
     useEffect(() => {
+        console.log(loadingWindowRef)
+        window.addEventListener("load", handleAppLoad );
         dispatch(updateCurrenciesRate(defaultCurrencyRates));
     }, [])
+
+    function handleAppLoad(){
+        setTimeout(() => {
+            document.getElementById("loadingWindow").classList.add("hidden");
+        }, 1000)
+    }
 
     function handleCurrencyChange({currencyName, quantity, which}){
         console.log(currencyName, quantity, which);
@@ -32,6 +43,7 @@ function App(){
     return(
         <div className="App">
             <Layout 
+                loadingWindowRef={loadingWindowRef}
                 handleCurrencyChange={handleCurrencyChange}
                 handleCurrencyQuantityChange={handleCurrencyQuantityChange}
             />

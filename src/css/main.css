@@ -128,15 +128,16 @@ header{
 }
 
 /*---Loading_winwod---*/
-.loadingWindow{
+#loadingWindow{
     width: 100%;
     height: 100%;
     color: var(--lightColor);
     background-color: var(--darkBackground);
     position: fixed;
     top: 0;
+    transition: 1s;
 }
 
-.loadingWindow.hidden{
+#loadingWindow.hidden{
     opacity: 0;
 }

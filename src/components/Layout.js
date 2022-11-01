@@ -7,7 +7,7 @@ import About from "./About/About";
 import LoadingWindow from "./Loading_window/Loading_window";
 
 
-function Layout({ handleCurrencyChange, handleCurrencyQuantityChange }){
+function Layout({ loadingWindowRef, handleCurrencyChange, handleCurrencyQuantityChange }){
     return(
         <div id="layout">
             <Header />
@@ -16,7 +16,7 @@ function Layout({ handleCurrencyChange, handleCurrencyQuantityChange }){
                 <Route path="/donation" element={<DonationPage />} />
                 <Route path="/about" element={<About />} />
             </Routes>
-            <LoadingWindow />
+            <LoadingWindow loadingWindowRef={loadingWindowRef} />
         </div>
     );
 }

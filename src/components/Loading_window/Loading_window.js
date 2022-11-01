@@ -1,8 +1,8 @@
 import LoadingIcon from "./Loading_icon";
 
-function LoadingWindow(){
+function LoadingWindow({ loadingWindowRef }){
     return(
-        <div className="loadingWindow">
+        <div id="loadingWindow" ref={loadingWindowRef}>
             <LoadingIcon />
         </div>
     );
