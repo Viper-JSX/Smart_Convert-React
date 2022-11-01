@@ -4,6 +4,7 @@ import Header from "./Header/Header";
 import Converter from "./Converter/Converter";
 import DonationPage from "./Donation_page/Donation_page";
 import About from "./About/About";
+import LoadingWindow from "./Loading_window/Loading_window";
 
 
 function Layout({ handleCurrencyChange, handleCurrencyQuantityChange }){
@@ -15,6 +16,7 @@ function Layout({ handleCurrencyChange, handleCurrencyQuantityChange }){
                 <Route path="/donation" element={<DonationPage />} />
                 <Route path="/about" element={<About />} />
             </Routes>
+            <LoadingWindow />
         </div>
     );
 }
