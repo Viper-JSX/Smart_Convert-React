@@ -13,12 +13,14 @@ body{
     margin: 0;
     padding: 0;
     background-color: var(--middleDarkBackground);
+    font-family: monospace, sans-serif, serif;
 }
 
 header{
     width: 100%;
     color: var(--lightBackground);
     background-color: var(--darkBackground);
+    font-size: 1.5rem;
 }
 
 #mainNavigationNavItems{
