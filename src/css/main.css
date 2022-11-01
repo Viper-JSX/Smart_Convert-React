@@ -136,8 +136,20 @@ header{
     position: fixed;
     top: 0;
     transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #loadingWindow.hidden{
     opacity: 0;
+}
+
+.loadingIcon{
+    width: 2rem;
+    height: 2rem;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

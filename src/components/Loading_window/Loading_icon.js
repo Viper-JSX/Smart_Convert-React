@@ -1,8 +1,6 @@
 function LoadingIcon(){
     return(
-        <div className="loadingIcon">
-            Window
-        </div>
+        <div className="loadingIcon">$</div>
     );
 }
 

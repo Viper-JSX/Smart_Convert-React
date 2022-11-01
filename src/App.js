@@ -27,7 +27,7 @@ function App(){
     function handleAppLoad(){
         setTimeout(() => {
             document.getElementById("loadingWindow").classList.add("hidden");
-        }, 1000)
+        }, 3000)
     }
 
     function handleCurrencyChange({currencyName, quantity, which}){
