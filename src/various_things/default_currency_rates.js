@@ -13,6 +13,9 @@ export const defaultCurrencyRates = {
 
     gbr:{
         relativeToDollar: 1.1
-    }
+    },
 
+    huf:{
+        relativeToDollar: 1/1000
+    }
 }

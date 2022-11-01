@@ -76,17 +76,15 @@ header{
 .currencySelect{
     padding: 0;
     list-style: none;
-    display: flex;
-    justify-content: space-around;
+    white-space: nowrap;
+    overflow: auto;
 }
 
 .currencySelect li{
     width: 25%;
     border: 1px solid black;
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    display: inline-block;
 }
 
 li.selected{
