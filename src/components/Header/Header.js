@@ -5,7 +5,7 @@ function Header(){
         <header>
             <nav id="mainNavigation">
                 <ul id="mainNavigationNavItems">
-                    <NavLink to="/" >Smart Convert</NavLink>
+                    <NavLink to="/" end >Smart Convert</NavLink>
                     <NavLink to="donation" >Donation</NavLink>
                     <NavLink to="about" >About</NavLink>
                 </ul>
