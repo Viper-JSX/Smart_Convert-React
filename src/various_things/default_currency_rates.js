@@ -11,7 +11,7 @@ export const defaultCurrencyRates = {
         relativeToDollar: 0.95
     },
 
-    pound:{
+    gbr:{
         relativeToDollar: 1.1
     }
 
