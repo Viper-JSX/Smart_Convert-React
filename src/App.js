@@ -25,7 +25,7 @@ function App(){
     }
 
     function handleCurrencyQuantityChange({event, which}){
-        const quantity = parseFloat(event.target.value) || 0;
+        const quantity = ( parseFloat(event.target.value) || parseFloat(event.target.value) === 0 ) ? parseFloat(event.target.value) : "";
         dispatch(convert({ quantity, which })) //'which' defines which input was updated, 0 in case if there is empty string
     }
 
