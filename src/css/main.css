@@ -16,6 +16,10 @@ body{
     font-family: monospace, sans-serif, serif;
 }
 
+#layout{
+    height: 100vh;
+}
+
 header{
     width: 100%;
     color: var(--lightBackground);
@@ -25,7 +29,7 @@ header{
 
 #mainNavigationNavItems{
     width: 100%;
-    min-height: 5rem;
+    height: 5rem;
     margin: 0;
     display: flex;
     justify-content: space-around;
@@ -52,7 +56,7 @@ header{
 /*---Converter---*/
 #converterContainer{
     width: 100%;
-    margin-top: 5rem;
+    margin-top: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,15 +68,23 @@ header{
     padding: 3rem;
     color: var(--lightColor);
     border: 2px solid black;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    outline: 2rem solid var(--darkBackground);
 }
 
 #converterTitle{
     width: 100%;
     text-align: center;
+}
+
+.currencyInput input{
+    height: 2rem;
+    color: orange;
+    background-color: var(--darkBackground);
+    border-radius: 0.3rem;
 }
 
 .currencySelect{
@@ -90,7 +102,7 @@ header{
 }
 
 .currencySelect li.selected{
-    color: red;
+    color: orangered;
     background-color: var(--lightBackground);
 }
 

@@ -8,7 +8,7 @@ function CurrencyInput({ which, handleCurrencyChange, handleCurrencyQuantityChan
     const currentCurrencyValue = which === 1 ? currentPairQuantity[0] : currentPairQuantity[1];
 
     return(
-        <div>
+        <div className="currencyInput">
             <CurrencySelect which={which} handleCurrencyChange={handleCurrencyChange} />
             <input type="number" placeholder="Quantity" value={currentCurrencyValue} onChange={(event) => handleCurrencyQuantityChange({ event, which })} />
         </div>
