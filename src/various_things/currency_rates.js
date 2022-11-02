@@ -23,5 +23,10 @@ export const currencyRatesRelativeToDollar = {
     HUF:{
         name: "Hungarian Forint",
         rate: 1/1000
+    },
+
+    XAF:{
+        name: "Africa",
+        rate: 1/600
     }
 }

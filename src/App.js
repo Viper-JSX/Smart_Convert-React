@@ -21,15 +21,12 @@ function App(){
 
     useEffect(() => {
         window.addEventListener("load", handleAppLoad );
-        console.log(query)
         fetch(query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ"} })
         .then((response) => response.json())
         .then((result) => {
             const rates = result.rates;
-            console.log(rates)
             for(const cur in rates){
-                console.log(currencyRatesRelativeToDollar[cur], cur)
-                currencyRatesRelativeToDollar[cur].rate = 1/rates[cur]; //for compatibility with app logic
+                currencyRatesRelativeToDollar[cur].rate = 1/rates[cur]; //1/rates[cur] defines rate relative to dollar, it`s done for compatibility with app logic
             }
             dispatch(updateCurrenciesRate(currencyRatesRelativeToDollar));
         })
