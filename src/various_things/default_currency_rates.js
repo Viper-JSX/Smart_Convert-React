@@ -1,21 +1,27 @@
 export const defaultCurrencyRates = {
-    uah:{
-        relativeToDollar: 1/40
+    UAH:{
+        name: "Ukrainian hrivnya",
+        rate: 40
     },
 
-    usd:{
-        relativeToDollar: 1
+    USD:{
+        name: "United States Dollar",
+        rate: 1
     },
 
-    eur:{
-        relativeToDollar: 0.95
+    EUR:{
+        name: "European Euro",
+        rate: 1.05
     },
 
-    gbr:{
-        relativeToDollar: 1.1
+    GBR:{
+        name: "Great Britan Pound",
+        rate: 0.8,
+
     },
 
-    huf:{
-        relativeToDollar: 1/1000
+    HUF:{
+        name: "Hungarian Forint",
+        rate: 1000
     }
 }
