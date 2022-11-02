@@ -20,13 +20,19 @@ function App(){
 
     useEffect(() => {
         window.addEventListener("load", handleAppLoad );
-        dispatch(updateCurrenciesRate(currencyRatesRelativeToDollar));
         
         fetch("https://api.apilayer.com/fixer/latest?base=USD&symbols=USD,EUR,UAH,GBP,HUF", { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ"} })
         .then((response) => response.json())
         .then((result) => {
-            console.log(result)
+            const rates = result.rates;
+            console.log(rates)
+            for(const cur in rates){
+                console.log(currencyRatesRelativeToDollar[cur], cur)
+                currencyRatesRelativeToDollar[cur].rate = 1/rates[cur]; //for compatibility with app logic
+            }
+            dispatch(updateCurrenciesRate(currencyRatesRelativeToDollar));
         })
+        .catch(() => dispatch(updateCurrenciesRate(currencyRatesRelativeToDollar))); //Setting default rates
     }, [])
 
     function handleAppLoad(){

@@ -14,7 +14,7 @@ export const currencyRatesRelativeToDollar = {
         rate: 1/1.05
     },
 
-    GBR:{
+    GBP:{
         name: "Great Britan Pound",
         rate: 1/0.8,
 
