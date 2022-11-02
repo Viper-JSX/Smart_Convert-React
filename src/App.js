@@ -42,7 +42,6 @@ function App(){
     }
 
     function handleCurrencyChange({currencyName, quantity, which}){
-        console.log(currencyName, quantity, which);
         dispatch(changeCurrencyPair({ currencyName, quantity, which }))
     }
 

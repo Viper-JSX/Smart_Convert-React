@@ -26,7 +26,7 @@ export const currencyRatesRelativeToDollar = {
     },
 
     XAF:{
-        name: "Africa",
+        name: "Central Africa Franc",
         rate: 1/600
     }
 }

@@ -20,7 +20,6 @@ function currency(state={currentPair: ["EUR", "USD"], currentPairQuantity: [0, 0
             }
             else if(action.payload.which === 2){ //second input was changed
                 const converted = (state.currencyRatesRelativeToDollar[pair2].rate / state.currencyRatesRelativeToDollar[pair1].rate) * (action.payload.quantity || 0);
-                console.log("converted:", pair1, state.currentPairQuantity[0], "->", pair2, state.currentPairQuantity[1], state.currentPair, state.currentPairQuantity )
                 return {...state, currentPairQuantity: [ converted, action.payload.quantity ]};
             }
         }
