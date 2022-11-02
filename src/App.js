@@ -10,7 +10,7 @@ import Layout from "./components/Layout";
 import { convert, updateCurrenciesRate } from "./redux/action_creators";
 import { changeCurrencyPair } from "./redux/thunks";
 
-import { defaultCurrencyRates } from "./various_things/default_currency_rates";
+import { currencyRatesRelativeToDollar } from "./various_things/currency_rates";
 
 //The prop which is used to distinguish between two CurrencyInput`s
 
@@ -20,7 +20,7 @@ function App(){
 
     useEffect(() => {
         window.addEventListener("load", handleAppLoad );
-        dispatch(updateCurrenciesRate(defaultCurrencyRates));
+        dispatch(updateCurrenciesRate(currencyRatesRelativeToDollar));
         
         fetch("https://api.apilayer.com/fixer/latest?base=USD&symbols=USD,EUR,UAH,GBP,HUF", { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ"} })
         .then((response) => response.json())
