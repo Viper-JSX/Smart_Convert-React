@@ -22,11 +22,16 @@ function App(){
         console.log(loadingWindowRef)
         window.addEventListener("load", handleAppLoad );
         dispatch(updateCurrenciesRate(defaultCurrencyRates));
+        
+        //fetch("vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ")
+        //curl --request GET 'https://api.apilayer.com/fixer/latest?base=USD&symbols=EUR,GBP' \
+        //--header 'apikey: YOUR API KEY'
     }, [])
 
     function handleAppLoad(){
         setTimeout(() => {
-            document.getElementById("loadingWindow").classList.add("hidden");
+            loadingWindowRef.current.classList.add("hidden");
+            setTimeout(() => loadingWindowRef.current.style.display = "none", 1000); //delay is equal to LoadingWindow transition time
         }, 3000)
     }
 
