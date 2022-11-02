@@ -139,6 +139,11 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+#loadingWindow .appTitleHeading{
+    font-size: 2rem;
 }
 
 #loadingWindow.hidden{
