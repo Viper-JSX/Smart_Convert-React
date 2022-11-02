@@ -22,12 +22,11 @@ function App(){
         window.addEventListener("load", handleAppLoad );
         dispatch(updateCurrenciesRate(defaultCurrencyRates));
         
-        //fetch("vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ")
-        //curl --request GET 'https://api.apilayer.com/fixer/latest?base=USD&symbols=EUR,GBP' \
-        //--header 'apikey: YOUR API KEY'
-        fetch("https://api.apilayer.com/fixer/latest?base=USD", { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ"} })
+        fetch("https://api.apilayer.com/fixer/latest?base=USD&symbols=USD,EUR,UAH,GBP,HUF", { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ"} })
         .then((response) => response.json())
-        .then((result) => console.log(result))
+        .then((result) => {
+            console.log(result)
+        })
     }, [])
 
     function handleAppLoad(){
