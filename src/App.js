@@ -11,8 +11,9 @@ import { convert, updateCurrenciesRate } from "./redux/action_creators";
 import { changeCurrencyPair } from "./redux/thunks";
 
 import { currencyRatesRelativeToDollar } from "./various_things/currency_rates";
+import { query } from './various_things/query';
 
-//The prop which is used to distinguish between two CurrencyInput`s
+//'which' is The prop which is used to distinguish between two CurrencyInput`s
 
 function App(){
     const dispatch = useDispatch();
@@ -20,8 +21,8 @@ function App(){
 
     useEffect(() => {
         window.addEventListener("load", handleAppLoad );
-        
-        fetch("https://api.apilayer.com/fixer/latest?base=USD&symbols=USD,EUR,UAH,GBP,HUF", { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ"} })
+        console.log(query)
+        fetch(query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ"} })
         .then((response) => response.json())
         .then((result) => {
             const rates = result.rates;
@@ -34,6 +35,7 @@ function App(){
         })
         .catch(() => dispatch(updateCurrenciesRate(currencyRatesRelativeToDollar))); //Setting default rates
     }, [])
+
 
     function handleAppLoad(){
         setTimeout(() => {
