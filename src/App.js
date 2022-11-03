@@ -51,7 +51,7 @@ function App(){
     }
 
     function handleCurrencyQuantityChange({event, which}){
-        const quantity = ( parseFloat(event.target.value) || parseFloat(event.target.value) === 0 ) ? parseFloat(event.target.value) : "";
+        const quantity = ( parseFloat(event.target.value) || parseFloat(event.target.value) === 0 ) ? (Math.floor(parseFloat(event.target.value) * 100) / 100) : "";
         dispatch(convert({ quantity, which })) //'which' defines which input was updated
     }
 
