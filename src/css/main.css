@@ -61,7 +61,7 @@ header > nav > ul > *:nth-child(2n){
 /*---Converter---*/
 #converterContainer{
     width: 100%;
-    margin-top: 10rem;
+    min-height: calc(100vh - 5rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,14 +71,14 @@ header > nav > ul > *:nth-child(2n){
     width: 40vw;
     min-width: 300px;
     min-height: max-content;
+    margin: 3rem;
     padding: 3rem;
     color: var(--lightColor);
-    border: 2px solid black;
+    border: 1.5rem solid var(--darkBackground);
     border-radius: 1rem;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    border: 1.5rem solid var(--darkBackground);
 }
 
 #converterTitle{

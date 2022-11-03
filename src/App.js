@@ -20,7 +20,7 @@ function App(){
     const loadingWindowRef = useRef();
 
     useEffect(() => {
-        window.addEventListener("load", handleAppLoad );
+        //window.addEventListener("load", handleAppLoad ); //load not triggering on mobile
         fetch(query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ"} })
         .then((response) => response.json())
         .then((result) => {
@@ -31,15 +31,20 @@ function App(){
             dispatch(updateCurrenciesRate(currencyRatesRelativeToDollar));
         })
         .catch(() => dispatch(updateCurrenciesRate(currencyRatesRelativeToDollar))); //Setting default rates
-    }, [])
 
-
-    function handleAppLoad(){
         setTimeout(() => {
             loadingWindowRef.current.classList.add("hidden");
             setTimeout(() => loadingWindowRef.current.style.display = "none", 1000); //delay is equal to LoadingWindow transition time
         }, 3000)
-    }
+    }, [])
+
+
+    //function handleAppLoad(){  //load not triggering on mobile
+    //    setTimeout(() => {
+    //        loadingWindowRef.current.classList.add("hidden");
+    //        setTimeout(() => loadingWindowRef.current.style.display = "none", 1000); //delay is equal to LoadingWindow transition time
+    //    }, 3000)
+    //}
 
     function handleCurrencyChange({currencyName, quantity, which}){
         dispatch(changeCurrencyPair({ currencyName, quantity, which }))
