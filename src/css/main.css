@@ -27,6 +27,11 @@ header{
     font-size: 1.5rem;
 }
 
+header > nav > ul > *:nth-child(2n){
+    border-left: 2px solid var(--lightColor);
+    border-right: 2px solid var(--lightColor);
+}
+
 #mainNavigationNavItems{
     width: 100%;
     height: 5rem;
@@ -69,11 +74,11 @@ header{
     padding: 3rem;
     color: var(--lightColor);
     border: 2px solid black;
-    border-radius: 0.3rem;
+    border-radius: 1rem;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    outline: 2rem solid var(--darkBackground);
+    border: 1.5rem solid var(--darkBackground);
 }
 
 #converterTitle{
@@ -181,11 +186,10 @@ header{
 
 @media screen and (max-width: 840px){
     :root{
-        font-size: 20px;
+        font-size: 16px;
     }
     
     #converter{
-        width: 90vw;
-        height: 60vh;
+        width: 75vw;
     }
 }

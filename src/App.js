@@ -20,8 +20,6 @@ function App(){
     const loadingWindowRef = useRef();
 
     useEffect(() => {
-        loadingWindowRef.current.style.display = "none"
-
         window.addEventListener("load", handleAppLoad );
         fetch(query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ"} })
         .then((response) => response.json())
