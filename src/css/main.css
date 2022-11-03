@@ -65,6 +65,7 @@ header{
 #converter{
     width: 40vw;
     min-width: 300px;
+    min-height: max-content;
     padding: 3rem;
     color: var(--lightColor);
     border: 2px solid black;
@@ -175,5 +176,16 @@ header{
     }
     100%{
         transform: rotateY(360deg);
+    }
+}
+
+@media screen and (max-width: 840px){
+    :root{
+        font-size: 20px;
+    }
+    
+    #converter{
+        width: 90vw;
+        height: 60vh;
     }
 }
