@@ -15,11 +15,11 @@ function currency(state={currentPair: ["EUR", "USD"], currentPairQuantity: [0, 0
             const pair2 = state.currentPair[1];
 
             if(action.payload.which === 1){ //'which defines in which input the value was changed', first input was changed 
-                const converted = (state.currencyRatesRelativeToDollar[pair1].rate / state.currencyRatesRelativeToDollar[pair2].rate) * (action.payload.quantity || 0);
+                const converted = Math.round( ((state.currencyRatesRelativeToDollar[pair1].rate / state.currencyRatesRelativeToDollar[pair2].rate) * (action.payload.quantity || 0)) * 1000) / 1000;
                 return {...state, currentPairQuantity: [ action.payload.quantity, converted ]};
             }
             else if(action.payload.which === 2){ //second input was changed
-                const converted = (state.currencyRatesRelativeToDollar[pair2].rate / state.currencyRatesRelativeToDollar[pair1].rate) * (action.payload.quantity || 0);
+                const converted = Math.round( ((state.currencyRatesRelativeToDollar[pair2].rate / state.currencyRatesRelativeToDollar[pair1].rate) * (action.payload.quantity || 0)) * 1000 ) / 1000;
                 return {...state, currentPairQuantity: [ converted, action.payload.quantity ]};
             }
         }
