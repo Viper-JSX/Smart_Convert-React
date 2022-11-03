@@ -178,6 +178,13 @@ header > nav > ul > *{
 }
 
 
+#converterContainer, #donationPage, #aboutPage{
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+
 
 @keyframes rotation{
     0%{
@@ -187,6 +194,16 @@ header > nav > ul > *{
         transform: rotateY(360deg);
     }
 }
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 
 @media screen and (max-width: 840px){
     :root{
