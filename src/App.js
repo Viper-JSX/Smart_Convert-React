@@ -24,7 +24,7 @@ function App(){
         fetch(query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ"} })
         .then((response) => response.json())
         .then((result) => {
-            const rates = result.rates;
+            const rates = result.rates || [];
             for(const cur in rates){
                 currencyRatesRelativeToDollar[cur].rate = 1/rates[cur]; //1/rates[cur] defines rate relative to dollar, it`s done for compatibility with app logic
             }
