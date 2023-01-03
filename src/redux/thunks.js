@@ -32,7 +32,7 @@ export function updateCurrencyRates(payload){
             dispatch({ type: HIDE_LOADING_WINDOW });
         })
         .catch((error) => {
-            console.log("Network Error", error); 
+            console.log("An error occured", error); //Need to add some error handling (message window or something like this...) 
             dispatch({ type: HIDE_LOADING_WINDOW });
         });
     }
