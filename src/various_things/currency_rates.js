@@ -1,6 +1,6 @@
 export const currencyRatesRelativeToDollar = {
     UAH:{
-        name: "Ukrainian hrivnya",
+        name: "Ukrainian Hrivnya",
         rate: 1/40
     },
 

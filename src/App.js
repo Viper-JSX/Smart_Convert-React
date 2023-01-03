@@ -1,7 +1,6 @@
 import './css/main.css';
 
 import React, { useEffect } from "react";
-import ReactDOM from "react-dom";
 
 import { useDispatch } from "react-redux";
 import { useRef } from 'react';
@@ -13,7 +12,7 @@ import { changeCurrencyPair } from "./redux/thunks";
 import { currencyRatesRelativeToDollar } from "./various_things/currency_rates";
 import { query } from './various_things/query';
 
-//'which' is The prop which is used to distinguish between two CurrencyInput`s
+//'which' is The prop which is used to distinguish between two CurrencyInputs
 
 function App(){
     const dispatch = useDispatch();
