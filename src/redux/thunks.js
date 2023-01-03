@@ -1,5 +1,5 @@
 import { convert } from "./action_creators";
-import { CHANGE_CURRENCY_PAIR, UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR } from "./action_types";
+import { CHANGE_CURRENCY_PAIR, HIDE_LOADING_WINDOW, SHOW_LOADING_WINDOW, UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR } from "./action_types";
 
 export function changeCurrencyPair(payload){
     return function(dispatch){
@@ -18,6 +18,7 @@ export function updateCurrencyRates(payload){
     return function(dispatch){
         const actualCurrencyRatesRelativeToDollar = {...payload.defaultCurrencyRatesRelativeToDollar}
 
+        dispatch({ type: SHOW_LOADING_WINDOW });
         fetch(payload.query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ---"} })
         .then((response) => response.json())
         .then((result) => {
@@ -28,6 +29,7 @@ export function updateCurrencyRates(payload){
                 }
             }
             dispatch({ type: UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR, payload: actualCurrencyRatesRelativeToDollar });
+            dispatch({ type: HIDE_LOADING_WINDOW });
         })
         .catch(() => console.log("Network Error") );
     }
