@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { CHANGE_CURRENCY_PAIR, CONVERT, UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR } from "./action_types";
+import { CHANGE_CURRENCY_PAIR, CONVERT, HIDE_LOADING_WINDOW, SHOW_LOADING_WINDOW, UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR } from "./action_types";
 import { defaultState } from "./default_state";
 
 function currency(state=defaultState.currency, action){
@@ -26,6 +26,12 @@ function currency(state=defaultState.currency, action){
         }
         case UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR:{
             return {...state, currencyRatesRelativeToDollar: action.payload};
+        }
+        case SHOW_LOADING_WINDOW: {
+            return { ...state, isLoading: true };
+        }
+        case HIDE_LOADING_WINDOW: {
+            return { ...state, isLoading: false };
         }
         default:{
             return state;
