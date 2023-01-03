@@ -1,14 +1,15 @@
 import { useSelector } from "react-redux";
-import CurrencySelectItem from "./Currency_select_item";
 
 function CurrencySelect({ which, handleCurrencyChange }){
     const currencyNames = useSelector((state) => Object.keys(state.currency.currencyRatesRelativeToDollar));
+    const [currentPairQuantity] = useSelector((state) => [state.currency.currentPair, state.currency.currentPairQuantity]);
+
     return(
-        <ul className="currencySelect">
+        <select className="currencySelect" onChange={(event) => handleCurrencyChange({ event, which, quantity: which === 1 ? currentPairQuantity[1] : currentPairQuantity[0]  })}>
             {
-                currencyNames.map((name) => <CurrencySelectItem currencyName={name} which={which} key={`${name}_currency_select_item`} handleCurrencyChange={handleCurrencyChange} />)
+                currencyNames.map((name) => <option value={name} >{name}</option> )
             }
-        </ul>
+        </select>
     )
 }
 

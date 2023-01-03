@@ -21,7 +21,7 @@ function App(){
 
     useEffect(() => {
         //window.addEventListener("load", handleAppLoad ); //load not triggering on mobile
-        fetch(query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ"} })
+        fetch(query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ---"} })
         .then((response) => response.json())
         .then((result) => {
             const rates = result.rates || [];
@@ -46,8 +46,9 @@ function App(){
     //    }, 3000)
     //}
 
-    function handleCurrencyChange({currencyName, quantity, which}){
-        dispatch(changeCurrencyPair({ currencyName, quantity, which }))
+    function handleCurrencyChange({event, quantity, which}){
+        console.log(event.target.value, quantity, which)
+        dispatch(changeCurrencyPair({ currencyName: event.target.value, quantity, which }))
     }
 
     function handleCurrencyQuantityChange({event, which}){
