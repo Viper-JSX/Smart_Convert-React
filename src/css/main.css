@@ -90,6 +90,11 @@ header > nav > ul > *{
     text-align: center;
 }
 
+.currencyInput{
+    display: flex;
+    flex-direction: column;
+}
+
 .currencyInput input{
     height: 2rem;
     color: orange;
