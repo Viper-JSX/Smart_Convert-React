@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import { CHANGE_CURRENCY_PAIR, CONVERT, UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR } from "./action_types";
-import { defaultCurrencyRatesRelativeToDollar } from "../various_things/default_currency_rates";
+import { defaultState } from "./default_state";
 
-function currency(state={currentPair: ["EUR", "USD"], currentPairQuantity: [0, 0], currencyRatesRelativeToDollar: defaultCurrencyRatesRelativeToDollar}, action){
+function currency(state=defaultState.currency, action){
     switch(action.type){
         case CHANGE_CURRENCY_PAIR:{
             if(action.payload.which === 1){ //which input changed it's currency
