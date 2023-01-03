@@ -19,7 +19,7 @@ export function updateCurrencyRates(payload){
         const actualCurrencyRatesRelativeToDollar = JSON.parse(JSON.stringify({...payload.defaultCurrencyRatesRelativeToDollar })); //JSON.parse and JSON.stringify were used to remove all the object references to avoid defaultCurrencyRatesRelativeToDollar mutation
 
         dispatch({ type: SHOW_LOADING_WINDOW });
-        fetch(payload.query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ-"} })
+        fetch(payload.query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ"} })
         .then((response) => response.json())
         .then((result) => {
             const rates = result.rates;
