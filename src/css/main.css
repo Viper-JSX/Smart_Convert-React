@@ -121,6 +121,8 @@ header > nav > ul > *{
 }
 
 .currencyInput{
+    margin-bottom: 1rem;
+    border-bottom: var(--lightBorder);
     display: flex;
     flex-direction: column;
 }
