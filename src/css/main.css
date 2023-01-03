@@ -103,6 +103,7 @@ header > nav > ul > *{
 }
 
 .currencySelect{
+    margin-bottom: 0.5rem;
     padding: 0;
     list-style: none;
     white-space: nowrap;

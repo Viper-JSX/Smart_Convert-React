@@ -16,10 +16,10 @@ export function changeCurrencyPair(payload){
 
 export function updateCurrencyRates(payload){
     return function(dispatch){
-        const actualCurrencyRatesRelativeToDollar = {...payload.defaultCurrencyRatesRelativeToDollar}
+        const actualCurrencyRatesRelativeToDollar = JSON.parse(JSON.stringify({...payload.defaultCurrencyRatesRelativeToDollar })); //JSON.parse and JSON.stringify were used to remove all the object references to avoid defaultCurrencyRatesRelativeToDollar mutation
 
         dispatch({ type: SHOW_LOADING_WINDOW });
-        fetch(payload.query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ---"} })
+        fetch(payload.query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ-"} })
         .then((response) => response.json())
         .then((result) => {
             const rates = result.rates;
@@ -31,6 +31,9 @@ export function updateCurrencyRates(payload){
             dispatch({ type: UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR, payload: actualCurrencyRatesRelativeToDollar });
             dispatch({ type: HIDE_LOADING_WINDOW });
         })
-        .catch(() => console.log("Network Error") );
+        .catch((error) => {
+            console.log("Network Error", error); 
+            dispatch({ type: HIDE_LOADING_WINDOW });
+        });
     }
 }

@@ -20,20 +20,7 @@ function App(){
 
     useEffect(() => {
         dispatch(updateCurrencyRates({ query, defaultCurrencyRatesRelativeToDollar }));
-
-        setTimeout(() => {
-            loadingWindowRef.current.classList.add("hidden");
-            setTimeout(() => loadingWindowRef.current.style.display = "none", 1000); //delay is equal to LoadingWindow transition time
-        }, 3000)
     }, [])
-
-
-    //function handleAppLoad(){  //load not triggering on mobile
-    //    setTimeout(() => {
-    //        loadingWindowRef.current.classList.add("hidden");
-    //        setTimeout(() => loadingWindowRef.current.style.display = "none", 1000); //delay is equal to LoadingWindow transition time
-    //    }, 3000)
-    //}
 
     function handleCurrencyChange({event, quantity, which}){
         console.log(event.target.value, quantity, which)
