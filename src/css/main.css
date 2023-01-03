@@ -7,6 +7,8 @@
     --darkBackground: #111111;
     --middleDarkBackground: #222222;
     --lightBackground: #EEEEEE;
+
+    --lightBorder: 2px solid var(--lightColor);
 }
 
 body{
@@ -25,10 +27,38 @@ header{
     color: var(--lightBackground);
     background-color: var(--darkBackground);
     font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header > nav{
+    width: 100%;
+}
+
+header > nav > ul{
+    margin: 0;
+    padding: 0;
 }
 
 header > nav > ul > *{
+    min-width: 200px;
+    text-align: center;
+}
 
+.currencyInfoBlock{
+
+}
+
+.currencyInfoBlock > .ratesInfo{
+    border: var(--lightBorder);
+    text-align: center;
+    font-size: 1rem;
+}
+
+.currencyInfoBlock > .ratesInfo td{
+    border: var(--lightBorder);
+    padding: 0.5rem;
 }
 
 #mainNavigationNavItems{
@@ -104,23 +134,8 @@ header > nav > ul > *{
 
 .currencySelect{
     margin-bottom: 0.5rem;
-    padding: 0;
-    list-style: none;
-    white-space: nowrap;
-    overflow: auto;
 }
 
-.currencySelect li{
-    width: 25%;
-    border: 1px solid black;
-    text-align: center;
-    display: inline-block;
-}
-
-.currencySelect li.selected{
-    color: orangered;
-    background-color: var(--lightBackground);
-}
 
 
 /*---Donation_page---*/
