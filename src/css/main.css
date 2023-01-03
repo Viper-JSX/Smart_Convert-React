@@ -46,15 +46,12 @@ header > nav > ul > *{
     text-align: center;
 }
 
-.currencyInfoBlock{
-
-}
-
 .currencyInfoBlock > .ratesInfo{
     border: var(--lightBorder);
     text-align: center;
     font-size: 1rem;
 }
+
 
 .currencyInfoBlock > .ratesInfo td{
     border: var(--lightBorder);

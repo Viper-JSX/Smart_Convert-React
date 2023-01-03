@@ -4,7 +4,7 @@ import CurrencyInfoBlock from "./Currency_info_block";
 function Header(){
     return(
         <header>
-            <CurrencyInfoBlock baseCurrency="USD" currencies={ ["EUR", "USD"] } />
+            <CurrencyInfoBlock baseCurrency="UAH" currencies={ ["EUR", "USD"] } />
             <nav id="mainNavigation">
                 <ul id="mainNavigationNavItems">
                     <NavLink to="/" end >Smart Convert</NavLink>
