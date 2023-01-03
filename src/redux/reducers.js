@@ -24,7 +24,6 @@ function currency(state={currentPair: ["EUR", "USD"], currentPairQuantity: [0, 0
             }
         }
         case UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR:{
-
             return {...state, currencyRatesRelativeToDollar: action.payload};
         }
         default:{

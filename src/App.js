@@ -6,8 +6,8 @@ import { useDispatch } from "react-redux";
 import { useRef } from 'react';
 
 import Layout from "./components/Layout";
-import { convert, updateCurrenciesRate } from "./redux/action_creators";
-import { changeCurrencyPair } from "./redux/thunks";
+import { convert } from "./redux/action_creators";
+import { changeCurrencyPair, updateCurrencyRates } from "./redux/thunks";
 
 import { currencyRatesRelativeToDollar } from "./various_things/currency_rates";
 import { query } from './various_things/query';
@@ -19,17 +19,7 @@ function App(){
     const loadingWindowRef = useRef();
 
     useEffect(() => {
-        //window.addEventListener("load", handleAppLoad ); //load not triggering on mobile
-        fetch(query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ---"} })
-        .then((response) => response.json())
-        .then((result) => {
-            const rates = result.rates || [];
-            for(const cur in rates){
-                currencyRatesRelativeToDollar[cur].rate = 1/rates[cur]; //1/rates[cur] defines rate relative to dollar, it`s done for compatibility with app logic
-            }
-            dispatch(updateCurrenciesRate(currencyRatesRelativeToDollar));
-        })
-        .catch(() => dispatch(updateCurrenciesRate(currencyRatesRelativeToDollar))); //Setting default rates
+        dispatch(updateCurrencyRates({ query, currencyRatesRelativeToDollar }));
 
         setTimeout(() => {
             loadingWindowRef.current.classList.add("hidden");
