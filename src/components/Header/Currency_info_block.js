@@ -1,25 +1,39 @@
 import { useSelector } from "react-redux";
 
-function CurrencyInfoBlock({ currencies = [] }){
-    const defaultCurrencyRatesRelativeToDollar = useSelector((state) => state.defaultCurrencyRatesRelativeToDollar);
+function CurrencyInfoBlock({ baseCurrency = "UAH", currencies = [] }){
+    const currencyRatesRelativeToDollar = useSelector((state) => state.currency.currencyRatesRelativeToDollar);
 
     return(
         <div className="currencyInfoBlock">
-            <table>
-                <thead>
-                    <tr>
-                        {
-                            
-                        }
-                    </tr>
-                </thead>
 
-                <tbody>
-                    <tr>
+            {
+                currencyRatesRelativeToDollar ? 
+                <table className="ratesInfo">
+                    <thead>
+                        <tr>
+                            {
+                                currencies.map((currency) => <td key={currency}>{currency}</td>)
+                            }
+                        </tr>
+                    </thead>
 
-                    </tr>
-                </tbody>
-            </table>
+                    <tbody>
+                        <tr>
+                            {
+                                currencies.map((currency) => 
+                                    <td key={currency}>
+                                        { 
+                                            (currencyRatesRelativeToDollar[currency].rate / currencyRatesRelativeToDollar[baseCurrency].rate).toFixed(2)
+                                        }
+                                    </td>
+                                )
+                            }
+                        </tr>
+                    </tbody>
+                </table>
+                :
+                null
+            }
         </div>
     );
 }
