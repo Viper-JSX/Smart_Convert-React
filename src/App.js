@@ -9,7 +9,7 @@ import Layout from "./components/Layout";
 import { convert } from "./redux/action_creators";
 import { changeCurrencyPair, updateCurrencyRates } from "./redux/thunks";
 
-import { currencyRatesRelativeToDollar } from "./various_things/currency_rates";
+import { defaultCurrencyRatesRelativeToDollar } from "./various_things/default_currency_rates";
 import { query } from './various_things/query';
 
 //'which' is The prop which is used to distinguish between two CurrencyInputs
@@ -19,7 +19,7 @@ function App(){
     const loadingWindowRef = useRef();
 
     useEffect(() => {
-        dispatch(updateCurrencyRates({ query, currencyRatesRelativeToDollar }));
+        dispatch(updateCurrencyRates({ query, defaultCurrencyRatesRelativeToDollar }));
 
         setTimeout(() => {
             loadingWindowRef.current.classList.add("hidden");

@@ -23,10 +23,10 @@ export function updateCurrencyRates(payload){
         .then((result) => {
             const rates = result.rates || [];
             for(const cur in rates){
-                payload.currencyRatesRelativeToDollar[cur].rate = 1/rates[cur]; //1/rates[cur] defines rate relative to dollar, it`s done for compatibility with app logic
+                payload.defaultCurrencyRatesRelativeToDollar[cur].rate = 1/rates[cur]; //1/rates[cur] defines rate relative to dollar, it`s done for compatibility with app logic
             }
-            dispatch({ type: UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR, payload: payload.currencyRatesRelativeToDollar });
+            dispatch({ type: UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR, payload: payload.defaultCurrencyRatesRelativeToDollar });
         })
-        .catch(() => dispatch({ type: UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR, payload: payload.currencyRatesRelativeToDollar })); //Setting default rates
+        .catch(() => console.log("Network Error") );//dispatch({ type: UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR, payload: payload.defaultCurrencyRatesRelativeToDollar })); //Setting default rates
     }
 }

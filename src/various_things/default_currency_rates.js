@@ -1,4 +1,4 @@
-export const currencyRatesRelativeToDollar = {
+export const defaultCurrencyRatesRelativeToDollar = {
     UAH:{
         name: "Ukrainian Hrivnya",
         rate: 1/40
