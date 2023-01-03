@@ -34,6 +34,8 @@ header{
 
 header > nav{
     width: 100%;
+    margin-top: 1rem;
+    border-top: var(--lightBorder);
 }
 
 header > nav > ul{
@@ -114,6 +116,7 @@ header > nav > ul > *{
 
 #converterTitle{
     width: 100%;
+    margin: 2rem;
     text-align: center;
 }
 
