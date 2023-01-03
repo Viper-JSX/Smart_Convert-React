@@ -5,18 +5,17 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useRef } from 'react';
 
-import Layout from "./components/Layout";
 import { convert } from "./redux/action_creators";
 import { changeCurrencyPair, updateCurrencyRates } from "./redux/thunks";
-
 import { defaultCurrencyRatesRelativeToDollar } from "./various_things/default_currency_rates";
 import { query } from './various_things/query';
+
+import Layout from "./components/Layout";
 
 //'which' is The prop which is used to distinguish between two CurrencyInputs
 
 function App(){
     const dispatch = useDispatch();
-    const loadingWindowRef = useRef();
 
     useEffect(() => {
         dispatch(updateCurrencyRates({ query, defaultCurrencyRatesRelativeToDollar }));
@@ -35,7 +34,6 @@ function App(){
     return(
         <div className="App">
             <Layout 
-                loadingWindowRef={loadingWindowRef}
                 handleCurrencyChange={handleCurrencyChange}
                 handleCurrencyQuantityChange={handleCurrencyQuantityChange}
             />

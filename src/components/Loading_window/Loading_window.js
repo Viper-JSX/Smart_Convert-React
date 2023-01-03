@@ -1,8 +1,8 @@
 import LoadingIcon from "./Loading_icon";
 
-function LoadingWindow({ loadingWindowRef }){
+function LoadingWindow(){
     return(
-        <div id="loadingWindow" ref={loadingWindowRef}>
+        <div id="loadingWindow">
             <h2 className="appTitleHeading">Smart Convert</h2>
             <LoadingIcon />
         </div>

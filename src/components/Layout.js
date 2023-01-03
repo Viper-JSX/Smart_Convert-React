@@ -8,7 +8,7 @@ import LoadingWindow from "./Loading_window/Loading_window";
 import { useSelector } from "react-redux";
 
 
-function Layout({ loadingWindowRef, handleCurrencyChange, handleCurrencyQuantityChange }){
+function Layout({ handleCurrencyChange, handleCurrencyQuantityChange }){
     const isLoading = useSelector((state) => state.currency.isLoading);
 
     return(
@@ -22,7 +22,7 @@ function Layout({ loadingWindowRef, handleCurrencyChange, handleCurrencyQuantity
 
             {
                 isLoading ? 
-                <LoadingWindow loadingWindowRef={loadingWindowRef} />
+                <LoadingWindow />
                 :
                 null
             }
