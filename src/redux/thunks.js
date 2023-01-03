@@ -16,17 +16,19 @@ export function changeCurrencyPair(payload){
 
 export function updateCurrencyRates(payload){
     return function(dispatch){
-        console.log("thunk");
-        
+        const actualCurrencyRatesRelativeToDollar = {...payload.defaultCurrencyRatesRelativeToDollar}
+
         fetch(payload.query, { headers: {apikey: "vl2Tc1djVFQSfijZCZZTHV0iNCfKMwJZ---"} })
         .then((response) => response.json())
         .then((result) => {
-            const rates = result.rates || [];
-            for(const cur in rates){
-                payload.defaultCurrencyRatesRelativeToDollar[cur].rate = 1/rates[cur]; //1/rates[cur] defines rate relative to dollar, it`s done for compatibility with app logic
+            const rates = result.rates;
+            if(rates){ //If result could not be get, then default rates will be used
+                for(const cur in rates){
+                    actualCurrencyRatesRelativeToDollar[cur].rate = 1/rates[cur]; //1/rates[cur] defines rate relative to dollar, it`s done for compatibility with app logic
+                }
             }
-            dispatch({ type: UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR, payload: payload.defaultCurrencyRatesRelativeToDollar });
+            dispatch({ type: UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR, payload: actualCurrencyRatesRelativeToDollar });
         })
-        .catch(() => console.log("Network Error") );//dispatch({ type: UPDATE_CURRENCY_RATES_RELATIVE_TO_DOLLAR, payload: payload.defaultCurrencyRatesRelativeToDollar })); //Setting default rates
+        .catch(() => console.log("Network Error") );
     }
 }
